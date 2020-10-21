@@ -22,7 +22,7 @@ struct ContentView: View {
             TextField("Hello, world!", text: Binding(get: {return session.user.displayName!}, set: {session.user.displayName = $0}))
             .padding()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-            Text("passed toggle to @Binding is :\(toggle? "true" : "false")")
+            Text("passed toggle to @Binding is :\(toggle ? "true" : "false")")
         ChildOne()
             Divider()
         ChildTwo()
