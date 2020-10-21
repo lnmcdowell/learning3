@@ -1,17 +1,15 @@
 //
 //  ContentView.swift
-//  learning3
+//  iOS13
 //
 //  Created by Larry Mcdowell on 10/17/20.
 //
 
 import SwiftUI
 
-
 struct ContentView: View {
     @EnvironmentObject var session:SessionStore
-    @State var toggle:Bool
-    
+    @State var toggle:Bool = false
     var body: some View {
         VStack{
             Text("Example of sharing EnvironmentObject to child views with bi-directional modification and update")
@@ -22,7 +20,7 @@ struct ContentView: View {
             TextField("Hello, world!", text: Binding(get: {return session.user.displayName!}, set: {session.user.displayName = $0}))
             .padding()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-            Text("passed toggle to @Binding is :\(toggle? "true" : "false")")
+            Text("passed toggle to @Binding is :\(toggle ? "true" : "false")")
         ChildOne()
             Divider()
         ChildTwo()

@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct learning3App: App {
+    var session = SessionStore()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(session)
         }
     }
 }
